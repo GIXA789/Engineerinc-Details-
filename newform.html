@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ground Mount Calculation</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <style>
+        
+       .mainbox{
+            font-size: 12px;
+            width :0%;
+            margin-top:-157mm;
+            margin-left:0mm;
+            width:0%;
+        }
+        .secondbox{
+            font-size: 12px;
+            margin-top:0mm;
+            margin-left:52mm;
+            width:0%;
+        }
+        .Page {
+        height:297mm;
+        width:210mm;   
+        border-style:solid;
+        align-self: center;
+        border-width: 3px;
+        font-family: Arial, Helvetica, sans-serif;
+      
+        }
+        .thirdbox{
+            font-size: 12px;
+            margin-top:-145mm;
+            margin-left:55mm;
+            width:0%;
+
+        }
+        .fourthbox{
+            font-size: 12px;
+            width:0%;
+            margin-top:-145mm;
+            margin-left:55mm;
+        }
+        .finalbox{
+            font-size: 12px;
+            width:0%;
+        }
+        .lastbox{
+            font-size: 12px;
+            width:0%;
+            margin-top:-50mm;
+            margin-left:0mm;
+        }
+    </style>
+
+</head>
+<body>
+         <div class="Page">
+        <div class="insideborder">
+            <br><div class="logo">
+                <img src="logo.png" width="300px">
+            </div>
+            <h3>GROUND MOUNT CALCULATION</h3><br><br>
+            <form action="process-newform.php"method="POST">
+                 <div class="leftbox">
+                    
+    <div class="GMInputForm">
+        <div class="projectdetails">
+            
+        <div class="secondbox">
+            <label>Applicable_Code</label>
+            <input type="text" id="Code" name="Applicable_Code">
+            <br>
+            <label>Ground_Snow_Load</label>
+            <input type="text" id="GSL" name="Ground_Snow_Load">
+            <br>
+            <label>PV_Dead_Load</label>
+            <input type="text" id="PDL" name="PV_Dead_Load">
+            <br>
+            <label>Wind_Speed</label>
+            <input type="text" id="WS" name="Wind_Speed">
+            <br>
+            <label>Risk_Category</label>
+            <input type="text" id="RC" name="Risk_Category">
+            <br>
+            <label>Exposure_Category</label>
+            <input type="text" id="EC" name="Exposure_Category">
+            <br>
+            <label>Live_Load</label>
+            <input type="text" id="LL" name="Live_Load">
+            <br>
+            <!--Wind Loading-->
+            <label>Basic_Wind_Speed</label>
+            <input type="text" id="BWS" name="Basic_Wind_Speed">
+            
+            <br>
+            <label>Wind_Direction_Factor</label>
+            <input type="text" id="WDF" name="Wind_Direction_Factor">
+            <br>
+            <label>Topography_Factor</label>
+            <input type="text" id="TF" name="Topography_Factor">
+            <br>
+            <label>Ground_Elevation_Factor</label>
+            <input type="text" id="GEF" name="Ground_Elevation_Factor">
+            <br>
+            <label>Guest_Effect_Factor</label>
+            <input type="text" id="GEF2" name="Guest_Effect_Factor">
+            <br>
+            <!--Load Calculation-->
+            <label>PV_Load</label>
+            <input type="text" id="PVL" name="PV_Load">
+            <br>
+            
+            <div class="thirdbox">
+                <label>Snow_Load</label>
+                <input type="text" id="SL" name="Snow_Load">
+                <br>
+            
+                <label>Module_Type</label>
+                <input type="text" id="MT" name="Module_Type"> 
+                <br>
+                <label>Module_Quantity</label>
+                <input type="text" id="MQ" name="Module_Quantity"> 
+                <br>
+                <label>Module_Model_Number</label>
+                <input type="text" id="MQ" name="Module_Model_Number"> 
+                <br>
+                <label>Ulit_Wind_Speed</label>
+                <input type="text" id="UWS" name="Ulit_Wind_Speed"> 
+                <br>
+                <label>Exposure_Cat</label>
+                <input type="text" id="EC" name="Exposure_Cat"> 
+                <br>
+                <label>Ground_Snow</label>
+                <input type="text" id="GS" name="Ground_Snow"> 
+                <br>
+                <label>Ground_Mount_Total_Length</label>
+                <input type="text" id="GMTL" name="Ground_Mount_Total_Length"> 
+                <br>
+                <label>Horizontal_Beam_Spacing</label>
+                <input type="text" id="HBS" name="Horizontal_Beam_Spacing"> 
+                <br>
+                <label>Canteliver_span_Beam_Length</label>
+                <input type="text" id="CSBL" name="Canteliver_span_Beam_Length"> 
+                <br>
+                <label>Column_Maximum_Height</label>
+                <input type="text" id="CMH" name="Column_Maximum_Height"> 
+                <br>
+                <label>Mid_Span_Beam_Length</label>
+                <input type="text" id="MSBL" name="Mid_Span_Beam_Length"> 
+                <br>
+                <label>Ground_Mount_Tilt_Angle</label>
+                <input type="text" id="GMT" name="Ground_Mount_Tilt_Angle"> 
+                <br>
+                
+            <div class="fourthbox">
+                <label>Steel_Column_Size</label>
+                <input type="text" id="SCS" name="Steel_Column_Size"> 
+                <br>
+                <label>Steel_Beam_Size</label>
+                <input type="text" id="SBS" name="Steel_Beam_Size"> 
+                <br>
+                <label>Footing_Diameter</label>
+                <input type="text" id="FD" name="Footing_Diameter"> 
+                <br>
+                <label>Footing_Depth</label>
+                <input type="text" id="FDd" name="Footing_Depth"> 
+                <br>
+                <label>Design_Material</label>
+                <input type="text" id="DM" name="Design_Material"> 
+                <br>
+                <label>Steel_Fy</label>
+                <input type="text" id="SF" name="Steel_Fy"> 
+                <br>
+                <label>Steel_E</label>
+                <input type="text" id="SE" name="Steel_E"> 
+                <br>
+                <label>Soil_Pressure</label>
+                <input type="text" id="SP" name="Soil_Pressure"> 
+                <br>
+            
+            <button>Submit</button><br><br>
+            <form action="main.php"method="POST">
+                <div class="Searchbox">
+                    <button>Search</button>
+                    </div>
+        </div></div></div></div>
+        </div>
+        </div>
+    
+        <br><br>
+        <div class="Ltbox">
+       
+            <div class="selec1">
+            <div class="lastbox"><br>
+            Column&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select name="SizeListC" id="SizeListC" name="SizeListC">
+                <option value="">1" STD</option>
+                <option value="">1-1/4" STD</option>
+                <option value="">1-1/2"STD</option>
+                <option value="">2" STD</option>
+                <option value="">2-1/2" STD</option>
+                <option value="">3" STD</option>
+                <option value="">3-1/2" STD</option>
+                <option value="">4" STD</option>
+
+                <option value="">1" XS</option>
+                <option value="">1-1/4" XS</option>
+                <option value="">1-1/2" XS</option>
+                <option value="">2" XS</option>
+                <option value="">2-1/2" XS</option>
+                <option value="">3" XS</option>
+                <option value="">3-1/2" XS</option>
+                <option value="">4" XS</option>
+
+                <option value="">2" XXS</option>
+                <option value="">2-1/2" XXS</option>
+                <option value="">3" XXS</option>
+                <option value="">4" XSS</option>
+            </select>
+            <div class="selec2">
+            <br>   
+            Beam&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <select name="SizeListB" id="SizeListB" name="SizeListB">
+                <option value="">1" STD</option>
+                <option value="">1-1/4" STD</option>
+                <option value="">1-1/2"STD</option>
+                <option value="">2" STD</option>
+                <option value="">2-1/2" STD</option>
+                <option value="">3" STD</option>
+                <option value="">3-1/2" STD</option>
+                <option value="">4" STD</option>
+
+                <option value="">1" XS</option>
+                <option value="">1-1/4" XS</option>
+                <option value="">1-1/2" XS</option>
+                <option value="">2" XS</option>
+                <option value="">2-1/2" XS</option>
+                <option value="">3" XS</option>
+                <option value="">3-1/2" XS</option>
+                <option value="">4" XS</option>
+
+                <option value="">2" XXS</option>
+                <option value="">2-1/2" XXS</option>
+                <option value="">3" XXS</option>
+                <option value="">4" XSS</option>
+            </select>
+        </div>
+        <br><br><br>
+        <div class="SolarModuleDetails">
+            <label>Module_Type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" id="SMD" name="Module_Type">
+            <br><br>
+            <label> Module_Quantity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="text" id="MQ" name="Module_Quantity">
+            <br><br>
+            <label>Module_Model_Number&nbsp;</label>
+            <input type="text" id="MMN" name="Module_Model_Number">
+        </div></div></div><br>
+        <div class="finalbox">
+            <div class="checking">
+            <input type="button" onclick="calc()" value="Check Design" id="Submit">
+            <span id="output"></span>
+        </div>
+        <div class="mainbox">
+            
+            <br><label>Date</label>
+            <input type="text" id="Date" name="Date">
+            
+            <br>
+            <label>Project_Name</label>
+            <input type="text" id="PN" name="Project_Name" >
+            <br>
+            <label>Project_Address</label>
+            <input type="text" id="PA" name="Project_Address">
+            <br>
+            <label>Contractor</label>
+            <input type="text" id="CN" name="Contractor" >
+            <br>
+            <label>Contractor_Address</label>
+            <input type="text" id="CA" name="Contractor_Address">
+    
+    </div>
+    </div>
+</div>
+</form>
+    <script src="GroundMount.js"></script>
+</body>
+</html>
